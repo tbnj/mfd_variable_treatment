@@ -28,7 +28,7 @@ otu <- data.table::fread("data/2025-03-06_MFD_V4_ASV_drying.csv")
 ### Create ampvis object and remove chloroplast sequences
 ampvis <- amp_load(otutable = otu,
                    metadata =  metadata.samples) %>%
-  amp_subset_taxa(tax_vector = c("Chloroplast"), remove = TRUE)
+  amp_subset_taxa(tax_vector = c("Eukaryota", "Chloroplast", "Mitochondria"), remove = TRUE)
 
 ## Evaluate number of reads per sample
 reads <- ampvis$abund %>%

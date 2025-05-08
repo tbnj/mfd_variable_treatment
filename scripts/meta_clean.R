@@ -42,7 +42,7 @@ data <- comb.meta %>%
   relocate(c(BioSample, project_id), .after = "fieldsample_barcode")
 
 data.table::fwrite(data, sep = ",", row.names = FALSE, col.names = TRUE, quote = FALSE,
-                   paste0("data/", format(Sys.time(), "%Y-%m-%d"), "_corrected_combined_metadata.csv"))
+                   paste0("output/", format(Sys.time(), "%Y-%m-%d"), "_corrected_combined_metadata_cleaned.csv"))
 
 
 
